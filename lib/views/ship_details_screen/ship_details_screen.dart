@@ -50,21 +50,41 @@ class _ShipDetailsScreenState extends State<ShipDetailsScreen> {
     );
   }
 
+  double boxInsetLength(double radius) => radius * 1.4142;
+
   Widget _mainView(ShipDetailsLoadedState state, BuildContext context) {
     return WatchShape(
       builder: (BuildContext context, WearShape shape, Widget? child) {
+        var screenSize = MediaQuery.of(context).size;
+        if (shape == WearShape.square) {
+          screenSize = Size(boxInsetLength(screenSize.width / 2),
+              boxInsetLength(screenSize.height / 2));
+        }
+        double screenHeight = screenSize.height;
+        double screenWidth = screenSize.width;
         return Stack(
           children: [
-            _imageView(state.shipsEntity),
-            _infoView(state.shipsEntity),
+            _imageView(
+              state.shipsEntity,
+              screenHeight,
+              screenWidth,
+            ),
+            _infoView(
+              state.shipsEntity,
+              screenHeight,
+              screenWidth,
+            ),
           ],
         );
       },
     );
   }
 
-  Widget _imageView(ShipsEntity? shipsEntity) {
+  Widget _imageView(
+      ShipsEntity? shipsEntity, double screenHeight, double screenWidth) {
     return Container(
+      height: screenHeight,
+      width: screenWidth,
       alignment: Alignment.topCenter,
       child: CachedNetworkImage(
         imageUrl: shipsEntity?.image ?? "",
@@ -87,8 +107,11 @@ class _ShipDetailsScreenState extends State<ShipDetailsScreen> {
     );
   }
 
-  Widget _infoView(ShipsEntity? shipsEntity) {
+  Widget _infoView(
+      ShipsEntity? shipsEntity, double screenHeight, double screenWidth) {
     return Container(
+      height: screenHeight,
+      width: screenWidth,
       alignment: Alignment.bottomCenter,
       margin: const EdgeInsets.only(bottom: 40),
       child: Text(

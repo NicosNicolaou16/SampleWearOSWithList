@@ -58,24 +58,46 @@ class _ShipsScreenState extends State<ShipsScreen> {
     );
   }
 
+  double boxInsetLength(double radius) => radius * 1.4142;
+
   Widget _mainView(ShipsLoadedState state, BuildContext context) {
     return WatchShape(
       builder: (BuildContext context, WearShape shape, Widget? child) {
-        return _listOfShips(state.shipsDataModelList);
+        var screenSize = MediaQuery.of(context).size;
+        if (shape == WearShape.square) {
+          screenSize = Size(boxInsetLength(screenSize.width / 2),
+              boxInsetLength(screenSize.height / 2));
+        }
+        double screenHeight = screenSize.height;
+        double screenWidth = screenSize.width;
+        return _listOfShips(
+          state.shipsDataModelList,
+          screenHeight,
+          screenWidth,
+        );
       },
     );
   }
 
-  Widget _listOfShips(List<ShipsDataModel> shipsDataModelList) {
+  Widget _listOfShips(
+    List<ShipsDataModel> shipsDataModelList,
+    double screenHeight,
+    double screenWidth,
+  ) {
     return ListView.builder(
         itemCount: shipsDataModelList.length,
         itemBuilder: (context, index) {
           ShipsDataModel shipsDataModel = shipsDataModelList[index];
-          return _cardView(shipsDataModel);
+          return _cardView(
+            shipsDataModel,
+            screenHeight,
+            screenWidth,
+          );
         });
   }
 
-  Widget _cardView(ShipsDataModel shipsDataModel) {
+  Widget _cardView(
+      ShipsDataModel shipsDataModel, double screenHeight, double screenWidth) {
     return InkWell(
       onTap: () {
         Navigator.push(
