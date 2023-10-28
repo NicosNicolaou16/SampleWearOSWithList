@@ -1,16 +1,17 @@
-# samplewearoswithlist
+# Sample Wear OS with List
+This is a sample project that support Wear OS without uses any library for Wear and also it uses Bloc Architecture Pattern with Dio Network Manager and Drift
+Database.
 
-A new Flutter project.
+# This Project contains:
+Wear OS support (without library for Wear OS) <br />
+Bloc Architecture Pattern with Repository and Service <br />
+Dio (Network Manager) <br />
+Drift Database (SQL) <br />
 
-## Getting Started
+Flutter SDK version: 3.13.9 <br />
+Dart Version: 3.1.5 <br />
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Feeds/Urls/End Point (parsing some data from response)
+## (Links References for Ends Points)
+https://github.com/r-spacex/SpaceX-API (GitHub) <br />
+https://docs.spacexdata.com/?version=latest (Postman) <br />

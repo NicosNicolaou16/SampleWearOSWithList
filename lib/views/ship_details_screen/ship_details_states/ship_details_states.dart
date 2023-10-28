@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:samplewearoswithlist/data/models/ship_details/ship_details_data_model.dart';
+import 'package:samplewearoswithlist/data/database/entities/ships_entity.dart';
 
 abstract class ShipDetailsStates extends Equatable {
   const ShipDetailsStates();
@@ -13,13 +13,10 @@ class ShipDetailsInitialState extends ShipDetailsStates {}
 class ShipDetailsLoadingState extends ShipDetailsStates {}
 
 class ShipDetailsLoadedState extends ShipDetailsStates {
-  List<ShipDetailsDataModel> shipDetailsDataModelList;
-
-  @override
-  List<Object> get props => [shipDetailsDataModelList];
+  ShipsEntity? shipsEntity;
 
   ShipDetailsLoadedState({
-    required this.shipDetailsDataModelList,
+    required this.shipsEntity,
   });
 }
 

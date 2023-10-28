@@ -1,12 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:samplewearoswithlist/data/models/ship_details/ship_details_data_model.dart';
+import 'package:samplewearoswithlist/data/database/entities/ships_entity.dart';
 import 'package:samplewearoswithlist/utils/alerts_dialog/alerts_dialog.dart';
 import 'package:samplewearoswithlist/views/ship_details_screen/ship_details_bloc.dart';
 import 'package:samplewearoswithlist/views/ship_details_screen/ship_details_events/ship_details_events.dart';
 import 'package:samplewearoswithlist/views/ship_details_screen/ship_details_states/ship_details_states.dart';
-
 
 class ShipDetailsScreen extends StatefulWidget {
   final String shipId;
@@ -22,16 +21,6 @@ class _ShipDetailsScreenState extends State<ShipDetailsScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          elevation: 0,
-          title: const Text(
-            "Details Screen",
-            style: TextStyle(
-              fontSize: 21,
-            ),
-          ),
-        ),
         body: BlocProvider(
           create: (_) => ShipDetailsBloc(ShipDetailsInitialState()),
           child: BlocConsumer<ShipDetailsBloc, ShipDetailsStates>(
@@ -61,57 +50,52 @@ class _ShipDetailsScreenState extends State<ShipDetailsScreen> {
   }
 
   Widget _mainView(ShipDetailsLoadedState state, BuildContext context) {
-    return ListView.builder(
-        itemCount: state.shipDetailsDataModelList.length,
-        itemBuilder: (context, index) {
-          ShipDetailsDataModel shipDetailsDataModel =
-              state.shipDetailsDataModelList[index];
-          if (shipDetailsDataModel.shipDetailsViewType ==
-              ShipDetailsViewType.PHOTO_VIEW_TYPE) {
-            return _imageView(shipDetailsDataModel);
-          } else {
-            return _infoView(shipDetailsDataModel);
-          }
-        });
-  }
-
-  Widget _imageView(ShipDetailsDataModel shipDetailsDataModel) {
-    return CachedNetworkImage(
-      imageUrl: shipDetailsDataModel.shipsEntity.image ?? "",
-      imageBuilder: (context, imageProvider) => Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: imageProvider,
-            fit: BoxFit.cover,
-          ),
-        ),
-      ),
-      placeholder: (context, url) => const CircularProgressIndicator(),
-      errorWidget: (context, url, error) => const Icon(Icons.image),
-      height: 300,
-      width: 50,
+    return Stack(
+      children: [
+        _imageView(state.shipsEntity),
+        _infoView(state.shipsEntity),
+      ],
     );
   }
 
-  Widget _infoView(ShipDetailsDataModel shipDetailsDataModel) {
-    return Center(
-      child: Column(
-        children: [
-          Text(
-            shipDetailsDataModel.shipsEntity.shipName ?? "",
-            style: const TextStyle(
-              color: Colors.black,
-              fontSize: 17,
+  Widget _imageView(ShipsEntity? shipsEntity) {
+    return Container(
+      alignment: Alignment.topCenter,
+      child: CachedNetworkImage(
+        imageUrl: shipsEntity?.image ?? "",
+        imageBuilder: (context, imageProvider) => Container(
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(
+              Radius.circular(100),
+            ),
+            image: DecorationImage(
+              image: imageProvider,
+              fit: BoxFit.cover,
             ),
           ),
-          Text(
-            shipDetailsDataModel.shipsEntity.shipType ?? "",
-            style: const TextStyle(
-              color: Colors.black,
-              fontSize: 15,
-            ),
-          ),
-        ],
+        ),
+        placeholder: (context, url) => const CircularProgressIndicator(),
+        errorWidget: (context, url, error) => const Icon(Icons.image),
+        height: 250,
+        width: 250,
+      ),
+    );
+  }
+
+  Widget _infoView(ShipsEntity? shipsEntity) {
+    return Container(
+      alignment: Alignment.bottomCenter,
+      margin: const EdgeInsets.only(bottom: 40),
+      child: Text(
+        shipsEntity?.shipName ?? "",
+        maxLines: 2,
+        overflow: TextOverflow.ellipsis,
+        textAlign: TextAlign.center,
+        style: const TextStyle(
+          color: Colors.green,
+          fontWeight: FontWeight.bold,
+          fontSize: 19,
+        ),
       ),
     );
   }
