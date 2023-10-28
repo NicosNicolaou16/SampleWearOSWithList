@@ -6,6 +6,7 @@ import 'package:samplewearoswithlist/utils/alerts_dialog/alerts_dialog.dart';
 import 'package:samplewearoswithlist/views/ship_details_screen/ship_details_bloc.dart';
 import 'package:samplewearoswithlist/views/ship_details_screen/ship_details_events/ship_details_events.dart';
 import 'package:samplewearoswithlist/views/ship_details_screen/ship_details_states/ship_details_states.dart';
+import 'package:wear/wear.dart';
 
 class ShipDetailsScreen extends StatefulWidget {
   final String shipId;
@@ -50,11 +51,15 @@ class _ShipDetailsScreenState extends State<ShipDetailsScreen> {
   }
 
   Widget _mainView(ShipDetailsLoadedState state, BuildContext context) {
-    return Stack(
-      children: [
-        _imageView(state.shipsEntity),
-        _infoView(state.shipsEntity),
-      ],
+    return WatchShape(
+      builder: (BuildContext context, WearShape shape, Widget? child) {
+        return Stack(
+          children: [
+            _imageView(state.shipsEntity),
+            _infoView(state.shipsEntity),
+          ],
+        );
+      },
     );
   }
 

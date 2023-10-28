@@ -5,6 +5,7 @@ import 'package:samplewearoswithlist/utils/alerts_dialog/alerts_dialog.dart';
 import 'package:samplewearoswithlist/views/ships_screen/ships_bloc.dart';
 import 'package:samplewearoswithlist/views/ships_screen/ships_events/ships_events.dart';
 import 'package:samplewearoswithlist/views/ships_screen/ships_states/ships_states.dart';
+import 'package:wear/wear.dart';
 
 import '../ship_details_screen/ship_details_screen.dart';
 
@@ -58,7 +59,11 @@ class _ShipsScreenState extends State<ShipsScreen> {
   }
 
   Widget _mainView(ShipsLoadedState state, BuildContext context) {
-    return _listOfShips(state.shipsDataModelList);
+    return WatchShape(
+      builder: (BuildContext context, WearShape shape, Widget? child) {
+        return _listOfShips(state.shipsDataModelList);
+      },
+    );
   }
 
   Widget _listOfShips(List<ShipsDataModel> shipsDataModelList) {
