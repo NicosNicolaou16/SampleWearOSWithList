@@ -11,6 +11,11 @@ Drift Database (SQL) <br />
 Flutter SDK version: 3.13.9 <br />
 Dart Version: 3.1.5 <br />
 
+# References/Tutorials Follow
+https://medium.com/flutter-community/flutter-building-wearos-app-fedf0f06d1b4
+https://pub.dev/packages/wear
+https://github.com/fluttercommunity/flutter_wear_plugin
+
 # Feeds/Urls/End Point (parsing some data from response)
 ## (Links References for Ends Points)
 https://github.com/r-spacex/SpaceX-API (GitHub) <br />
