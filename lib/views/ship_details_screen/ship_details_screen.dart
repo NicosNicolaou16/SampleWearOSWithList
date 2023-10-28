@@ -50,15 +50,15 @@ class _ShipDetailsScreenState extends State<ShipDetailsScreen> {
     );
   }
 
-  double boxInsetLength(double radius) => radius * 1.4142;
+  double _boxInsetLength(double radius) => radius * 1.4142;
 
   Widget _mainView(ShipDetailsLoadedState state, BuildContext context) {
     return WatchShape(
       builder: (BuildContext context, WearShape shape, Widget? child) {
         var screenSize = MediaQuery.of(context).size;
         if (shape == WearShape.square) {
-          screenSize = Size(boxInsetLength(screenSize.width / 2),
-              boxInsetLength(screenSize.height / 2));
+          screenSize = Size(_boxInsetLength(screenSize.width / 2),
+              _boxInsetLength(screenSize.height / 2));
         }
         double screenHeight = screenSize.height;
         double screenWidth = screenSize.width;
