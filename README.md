@@ -3,7 +3,7 @@ This is a sample project that support Wear OS without uses any library for Wear 
 Database.
 
 # This Project contains:
-Wear OS support (without library for Wear OS) <br />
+Wear OS support (WITHOUT A LIBRARY for Wear OS or plugin) <br />
 Bloc Architecture Pattern with Repository and Service <br />
 Dio (Network Manager) <br />
 Drift Database (SQL) <br />
