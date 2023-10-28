@@ -11,7 +11,6 @@ class ShipsBloc extends Bloc<ShipsEvents, ShipsStates> {
   ShipsBloc(ShipsStates shipsStates) : super(shipsStates) {
     on<ShipsFetchData>(_onShipsFetched);
     on<ShipsFromLocalDatabase>(_shipsFromLocalDatabase);
-    on<ShipsLocalSearch>(_onShipsLocalSearch);
   }
 
   Future<void> _onShipsFetched(ShipsFetchData event,
@@ -36,15 +35,6 @@ class ShipsBloc extends Bloc<ShipsEvents, ShipsStates> {
     await ShipsEntity.getAllShips();
     List<ShipsDataModel> shipsDataModelList = await ShipsDataModel
         .createShipsDataModel(shipsEntityList);
-    emit(ShipsLoadedState(shipsDataModelList: shipsDataModelList));
-  }
-
-  Future<void> _onShipsLocalSearch(ShipsLocalSearch event,
-      Emitter<ShipsStates> emit,) async {
-    List<ShipsEntity> shipsEntityList =
-    await ShipsEntity.getShipsByName(event.searchText ?? "");
-    List<ShipsDataModel>? shipsDataModelList =
-    await ShipsDataModel.createShipsDataModel(shipsEntityList);
     emit(ShipsLoadedState(shipsDataModelList: shipsDataModelList));
   }
 }
