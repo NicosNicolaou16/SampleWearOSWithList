@@ -2,6 +2,9 @@
 This is a sample project that support Wear OS app for Wear and also it uses Bloc Architecture Pattern with Dio Network Manager and Drift
 Database.
 
+## Similar project with (Kotlin Language)
+https://github.com/NicosNicolaou16/SampleWearOSComposeWithList <br />
+
 # This Project contains:
 Wear OS support <br />
 Bloc Architecture Pattern with Repository and Service <br />
