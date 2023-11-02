@@ -12,7 +12,11 @@ class ShipDetailsBloc extends Bloc<ShipDetailsEvents, ShipDetailsStates> {
     ShipDetailsLocalQuery event,
     Emitter<ShipDetailsStates> emit,
   ) async {
-    ShipsEntity? shipsEntity = await ShipsEntity.getShipById(event.shipId);
-    emit(ShipDetailsLoadedState(shipsEntity: shipsEntity));
+    if (event.shipId != "-1") {
+      ShipsEntity? shipsEntity = await ShipsEntity.getShipById(event.shipId);
+      emit(ShipDetailsLoadedState(shipsEntity: shipsEntity));
+    } else {
+      emit(const ShipDetailsErrorState());
+    }
   }
 }
