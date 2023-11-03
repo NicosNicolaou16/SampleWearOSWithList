@@ -2,6 +2,8 @@
 This is a sample project that support Wear OS app for Wear and also it uses Bloc Architecture Pattern with Dio Network Manager and Drift
 Database.
 
+NOTE: EXAMPLE ONLY FOR ANDROID
+
 ## Similar project with (Kotlin Language)
 https://github.com/NicosNicolaou16/SampleWearOSComposeWithList <br />
 
@@ -10,6 +12,24 @@ Wear OS support <br />
 Bloc Architecture Pattern with Repository and Service <br />
 Dio (Network Manager) <br />
 Drift Database (SQL) <br />
+
+# Setup in Manifest
+```xml
+
+<manifest>
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
+    <application>
+        <!--other code here-->
+
+        <!--Optional - Depend if the Wear OS App need app or note-->
+        <meta-data android:name="com.google.android.wearable.standalone" android:value="true" />
+
+        <!--other code here-->
+    </application>
+</manifest>
+```
 
 Flutter SDK version: 3.13.9 <br />
 Dart Version: 3.1.5 <br />
