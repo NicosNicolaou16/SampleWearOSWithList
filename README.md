@@ -17,6 +17,7 @@ Drift Database (SQL) <br />
 https://medium.com/flutter-community/flutter-building-wearos-app-fedf0f06d1b4 <br />
 https://pub.dev/packages/wear <br />
 https://github.com/fluttercommunity/flutter_wear_plugin <br />
+https://developer.android.com/training/wearables/compose <br />
 
 # Setup in Manifest
 ```xml
