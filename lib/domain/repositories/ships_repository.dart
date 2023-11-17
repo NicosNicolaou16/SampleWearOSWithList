@@ -1,6 +1,6 @@
 
 import 'package:samplewearoswithlist/data/database/entities/ships_entity.dart';
-import 'package:samplewearoswithlist/data/remote/ships_service.dart';
+import 'package:samplewearoswithlist/domain/remote/ships_service.dart';
 
 class ShipsRepository {
   final ShipsService _shipsService = ShipsService();

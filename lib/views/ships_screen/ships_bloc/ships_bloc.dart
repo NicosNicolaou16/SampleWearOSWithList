@@ -2,8 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:samplewearoswithlist/data/database/entities/ships_entity.dart';
 import 'package:samplewearoswithlist/data/models/ships/ships_data_model.dart';
 import 'package:samplewearoswithlist/domain/repositories/ships_repository.dart';
-import 'package:samplewearoswithlist/views/ships_screen/ships_events/ships_events.dart';
-import 'package:samplewearoswithlist/views/ships_screen/ships_states/ships_states.dart';
+import 'package:samplewearoswithlist/views/ships_screen/ships_bloc/ships_events.dart';
+import 'package:samplewearoswithlist/views/ships_screen/ships_bloc/ships_states.dart';
 
 class ShipsBloc extends Bloc<ShipsEvents, ShipsStates> {
   ShipsRepository shipsRepository = ShipsRepository();
