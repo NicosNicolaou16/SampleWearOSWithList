@@ -4,6 +4,9 @@ Database.
 
 NOTE: EXAMPLE ONLY FOR ANDROID
 
+<a title="simulator_image"><img src="Screenshot_20231119_124612.png" height="200" width="200"></a>
+<a title="simulator_image"><img src="Screenshot_20231119_124658.png" height="200" width="200"></a>
+
 ## Similar project with (Kotlin Language)
 https://github.com/NicosNicolaou16/SampleWearOSComposeWithList <br />
 
