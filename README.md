@@ -22,6 +22,9 @@ https://pub.dev/packages/wear <br />
 https://github.com/fluttercommunity/flutter_wear_plugin <br />
 https://developer.android.com/training/wearables/compose <br />
 
+Flutter SDK version: 3.13.9 <br />
+Dart Version: 3.1.5 <br />
+
 # Setup in Manifest
 ```xml
 
@@ -40,8 +43,8 @@ https://developer.android.com/training/wearables/compose <br />
 </manifest>
 ```
 
-Flutter SDK version: 3.13.9 <br />
-Dart Version: 3.1.5 <br />
+## Check my article
+https://medium.com/@nicosnicolaou/standalone-wear-os-application-jetpack-compose-and-flutter-5a37f4775ed8
 
 # Feeds/Urls/End Point (parsing some data from response)
 ## (Links References for Ends Points)
