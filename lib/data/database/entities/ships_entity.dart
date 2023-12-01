@@ -104,6 +104,8 @@ class ShipsEntity {
   static Future<List<ShipsEntity>> saveShips(
       List<ShipsEntity> shipsEntityList) async {
     AppDb appDb = AppDb.instance;
+    await PositionEntity.deleteAllPosition(appDb);
+    await MissionsEntity.deleteAllMissions(appDb);
     await Future.forEach(shipsEntityList, (ShipsEntity shipEntity) async {
       PositionEntity? positionEntity = shipEntity.positionEntity;
       if (positionEntity != null) {
@@ -126,10 +128,17 @@ class ShipsEntity {
     AppDb appDb = AppDb.instance;
     List<ShipsTable>? shipsTableList = await appDb.select(appDb.ships).get();
     List<ShipsEntity>? shipsEntityList = [];
-    await Future.forEach(shipsTableList, (ShipsTable? shipTable) {
+    await Future.forEach(shipsTableList, (ShipsTable? shipTable) async {
       if (shipTable != null) {
-        ShipsEntity? shipsEntity =
-            ShipsEntity.shipsTableConvertToShipsEntity(shipTable);
+        PositionEntity? positionEntity =
+            await PositionEntity.getPositionById(shipTable.id);
+        List<MissionsEntity>? missionEntityList =
+            await MissionsEntity.getAllMissionsByShipId(shipTable.id);
+        ShipsEntity? shipsEntity = ShipsEntity.shipsTableConvertToShipsEntity(
+          shipTable,
+          positionEntity,
+          missionEntityList,
+        );
         if (shipsEntity != null) {
           shipsEntityList.add(shipsEntity);
         }
@@ -145,7 +154,15 @@ class ShipsEntity {
         .getSingleOrNull();
     ShipsEntity? shipsEntity;
     if (shipsTable != null) {
-      shipsEntity = ShipsEntity.shipsTableConvertToShipsEntity(shipsTable);
+      PositionEntity? positionEntity =
+          await PositionEntity.getPositionById(shipsTable.id);
+      List<MissionsEntity>? missionEntityList =
+          await MissionsEntity.getAllMissionsByShipId(shipsTable.id);
+      shipsEntity = ShipsEntity.shipsTableConvertToShipsEntity(
+        shipsTable,
+        positionEntity,
+        missionEntityList,
+      );
     }
     return shipsEntity;
   }
@@ -156,10 +173,17 @@ class ShipsEntity {
           ..where((tbl) => tbl.shipName.like("%$shipName%")))
         .get();
     List<ShipsEntity>? shipsEntityList = [];
-    await Future.forEach(shipsTableList, (ShipsTable? shipTable) {
+    await Future.forEach(shipsTableList, (ShipsTable? shipTable) async {
       if (shipTable != null) {
-        ShipsEntity? shipsEntity =
-            ShipsEntity.shipsTableConvertToShipsEntity(shipTable);
+        PositionEntity? positionEntity =
+            await PositionEntity.getPositionById(shipTable.id);
+        List<MissionsEntity>? missionEntityList =
+            await MissionsEntity.getAllMissionsByShipId(shipTable.id);
+        ShipsEntity? shipsEntity = ShipsEntity.shipsTableConvertToShipsEntity(
+          shipTable,
+          positionEntity,
+          missionEntityList,
+        );
         if (shipsEntity != null) {
           shipsEntityList.add(shipsEntity);
         }
@@ -168,7 +192,11 @@ class ShipsEntity {
     return shipsEntityList;
   }
 
-  static ShipsEntity? shipsTableConvertToShipsEntity(ShipsTable? shipsTable) {
+  static ShipsEntity? shipsTableConvertToShipsEntity(
+    ShipsTable? shipsTable,
+    PositionEntity? positionEntity,
+    List<MissionsEntity>? missionsEntityList,
+  ) {
     ShipsEntity? shipsEntity;
     if (shipsTable != null) {
       shipsEntity = ShipsEntity();
@@ -187,8 +215,8 @@ class ShipsEntity {
       shipsEntity.attemptedLandings = shipsTable.attemptedLandings;
       shipsEntity.url = shipsTable.url;
       shipsEntity.image = shipsTable.image;
-      shipsEntity.positionEntity = PositionEntity();
-      shipsEntity.missionsEntityList = [];
+      shipsEntity.positionEntity = positionEntity;
+      shipsEntity.missionsEntityList = missionsEntityList;
     }
     return shipsEntity;
   }
