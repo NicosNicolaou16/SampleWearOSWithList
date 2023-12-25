@@ -23,7 +23,7 @@ https://github.com/fluttercommunity/flutter_wear_plugin <br />
 https://developer.android.com/training/wearables/compose <br />
 
 ## Versions
-Flutter SDK version: 3.16.3 <br />
+Flutter SDK version: 3.16.5 <br />
 Dart Version: 3.2.2 <br />
 
 # Setup in Manifest
