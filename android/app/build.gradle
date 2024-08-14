@@ -26,7 +26,7 @@ android {
     namespace "com.samplewearoswithlist"
     compileSdk 34
     buildToolsVersion '34.0.0'
-    ndkVersion '26.1.10909125'
+    ndkVersion '27.0.12077973'
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
