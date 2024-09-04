@@ -37,8 +37,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   flutter_bloc: ^8.1.6
-  dio: ^5.4.3+1
-  drift: ^2.19.2
+  dio: ^5.7.0
+  drift: ^2.20.0
   sqlite3_flutter_libs: ^0.5.23
   path_provider: ^2.1.4
   path: ^1.8.3
@@ -49,7 +49,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  drift_dev: ^2.19.1
+  drift_dev: ^2.20.1
   build_runner: ^2.4.12
 
   # The "flutter_lints" package below contains a set of recommended lints to
