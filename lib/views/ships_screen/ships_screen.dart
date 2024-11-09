@@ -5,12 +5,11 @@ import 'package:samplewearoswithlist/utils/alerts_dialog/alerts_dialog.dart';
 import 'package:samplewearoswithlist/views/ships_screen/ships_bloc/ships_bloc.dart';
 import 'package:samplewearoswithlist/views/ships_screen/ships_bloc/ships_events.dart';
 import 'package:samplewearoswithlist/views/ships_screen/ships_bloc/ships_states.dart';
-import 'package:wear/wear.dart';
 
 import '../ship_details_screen/ship_details_screen.dart';
 
 class ShipsScreen extends StatefulWidget {
-  const ShipsScreen({Key? key}) : super(key: key);
+  const ShipsScreen({super.key});
 
   @override
   State<ShipsScreen> createState() => _ShipsScreenState();
@@ -70,21 +69,15 @@ class _ShipsScreenState extends State<ShipsScreen> {
   double _boxInsetLength(double radius) => radius * 1.4142;
 
   Widget _mainView(ShipsLoadedState state, BuildContext context) {
-    return WatchShape(
-      builder: (BuildContext context, WearShape shape, Widget? child) {
-        var screenSize = MediaQuery.of(context).size;
-        if (shape == WearShape.square) {
-          screenSize = Size(_boxInsetLength(screenSize.width / 2),
-              _boxInsetLength(screenSize.height / 2));
-        }
-        double screenHeight = screenSize.height;
-        double screenWidth = screenSize.width;
-        return _listOfShips(
-          state.shipsDataModelList,
-          screenHeight,
-          screenWidth,
-        );
-      },
+    var screenSize = MediaQuery.of(context).size;
+    screenSize = Size(_boxInsetLength(screenSize.width / 2),
+        _boxInsetLength(screenSize.height / 2));
+    double screenHeight = screenSize.height;
+    double screenWidth = screenSize.width;
+    return _listOfShips(
+      state.shipsDataModelList,
+      screenHeight,
+      screenWidth,
     );
   }
 
