@@ -24,11 +24,6 @@ retrieving data from the remote server. <br />
 retrieved data from the remote server, querying data from the local database, and supporting offline
 functionality. ([Drift Database Documentation](https://pub.dev/packages/drift)) <br />
 
-## Versions
-
-Flutter SDK version: 3.24.4 <br />
-Dart Version: 3.5.4 <br />
-
 # Setup
 
 ## Setup in Manifest
@@ -55,6 +50,11 @@ Dart Version: 3.5.4 <br />
 
 > [!IMPORTANT]
 > Similar project with (Kotlin Language) :point_right: [SampleWearOSComposeWithList](https://github.com/NicosNicolaou16/SampleWearOSComposeWithList) :point_left: <br />
+
+## Versioning
+
+Flutter SDK version: 3.24.4 <br />
+Dart Version: 3.5.4 <br />
 
 # Feeds/Urls/End Point (parsing some data from response)
 
