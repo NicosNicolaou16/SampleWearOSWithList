@@ -9,7 +9,7 @@ for network management, and Drift for database handling.
 <a title="simulator_image"><img src="Screenshot_20231119_124612.png" height="200" width="200"></a>
 <a title="simulator_image"><img src="Screenshot_20231119_124658.png" height="200" width="200"></a>
 
-# This Project contains:
+# The Project Contain the following technologies
 
 [Wear OS](https://developer.android.com/training/wearables) support refers to adapting an app for
 use on smartwatches, ensuring it works well with small
