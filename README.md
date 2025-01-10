@@ -15,12 +15,18 @@ https://github.com/NicosNicolaou16/SampleWearOSComposeWithList <br />
 
 # This Project contains:
 
-Wear OS support <br />
+[Wear OS](https://developer.android.com/training/wearables) support refers to adapting an app for
+use on smartwatches, ensuring it works well with small
+screens, conserves battery life, and utilizes features such as notifications and fitness tracking
+specific to wearable devices. <br />
 [Bloc Patterns](https://pub.dev/packages/flutter_bloc) along with repositories
 and services, separates business logic, data access, and UI by using streams to handle state and
 manage data flow. ([Bloc Pattern Documentation](https://bloclibrary.dev/getting-started/)) <br />
-Dio (Network Manager) <br />
-Drift Database (SQL) <br />
+[Dio Network Manager](https://pub.dev/packages/dio) is responsible for making requests and
+retrieving data from the remote server. <br />
+[Drift Database](https://drift.simonbinder.eu/docs/getting-started/) is responsible for saving the
+retrieved data from the remote server, querying data from the local database, and supporting offline
+functionality. ([Drift Database Documentation](https://pub.dev/packages/drift)) <br />
 
 # References/Tutorials Follow
 
