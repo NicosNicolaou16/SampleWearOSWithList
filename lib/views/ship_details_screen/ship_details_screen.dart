@@ -67,8 +67,8 @@ class _ShipDetailsScreenState extends State<ShipDetailsScreen> {
       children: [
         _imageView(
           state.shipsEntity,
-          widget.screenHeight * 2,
-          widget.screenWidth * 2,
+          widget.screenHeight,
+          widget.screenWidth,
         ),
         _infoView(
           state.shipsEntity,
