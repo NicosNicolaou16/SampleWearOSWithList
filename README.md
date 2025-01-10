@@ -3,7 +3,8 @@
 This is a sample project that supports a Wear OS app and utilizes the BLoC architecture pattern, Dio
 for network management, and Drift for database handling.
 
-NOTE: EXAMPLE ONLY FOR ANDROID
+> [!IMPORTANT]
+> NOTE: EXAMPLE FOR ANDROID ONLY. <br />
 
 <a title="simulator_image"><img src="Screenshot_20231119_124612.png" height="200" width="200"></a>
 <a title="simulator_image"><img src="Screenshot_20231119_124658.png" height="200" width="200"></a>
