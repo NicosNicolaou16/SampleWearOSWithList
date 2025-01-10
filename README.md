@@ -16,7 +16,9 @@ https://github.com/NicosNicolaou16/SampleWearOSComposeWithList <br />
 # This Project contains:
 
 Wear OS support <br />
-Bloc Architecture Pattern with Repository and Service <br />
+[Bloc Patterns](https://pub.dev/packages/flutter_bloc) along with repositories
+and services, separates business logic, data access, and UI by using streams to handle state and
+manage data flow. ([Bloc Pattern Documentation](https://bloclibrary.dev/getting-started/)) <br />
 Dio (Network Manager) <br />
 Drift Database (SQL) <br />
 
