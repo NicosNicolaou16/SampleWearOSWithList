@@ -50,13 +50,11 @@ Dart Version: 3.5.4 <br />
 </manifest>
 ```
 
-## Check my article
+> [!IMPORTANT]  
+> Check my article for the setup :point_right: [Standalone Wear OS Application (Setup for Jetpack Compose and Flutter) - Medium](https://medium.com/@nicosnicolaou/standalone-wear-os-application-jetpack-compose-and-flutter-5a37f4775ed8) :point_left: <br />
 
-https://medium.com/@nicosnicolaou/standalone-wear-os-application-jetpack-compose-and-flutter-5a37f4775ed8
-
-## Similar project with (Kotlin Language)
-
-https://github.com/NicosNicolaou16/SampleWearOSComposeWithList <br />
+> [!IMPORTANT]
+> Similar project with (Kotlin Language) :point_right: [SampleWearOSComposeWithList](https://github.com/NicosNicolaou16/SampleWearOSComposeWithList) :point_left: <br />
 
 # Feeds/Urls/End Point (parsing some data from response)
 
