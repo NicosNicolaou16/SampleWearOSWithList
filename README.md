@@ -1,8 +1,7 @@
 # Sample Wear OS with List
 
-This is a sample project that support Wear OS app for Wear and also it uses Bloc Architecture
-Pattern with Dio Network Manager and Drift
-Database.
+This is a sample project that supports a Wear OS app and utilizes the BLoC architecture pattern, Dio
+for network management, and Drift for database handling.
 
 NOTE: EXAMPLE ONLY FOR ANDROID
 
