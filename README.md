@@ -78,7 +78,7 @@ This project parses data from the following endpoints:
 
 ## ⭐ Stargazers
 If you find this project useful, please give it a star!  
-[Check out the stargazers here](https://github.com/NicosNicolaou16/samplewearoswithlist/stargazers)
+[Check out the stargazers here](https://github.com/NicosNicolaou16/SampleWearOSWithList/stargazers)
 
 ## 🙏 Support & Contributions
 Feedback, bug reports, and feature requests are welcome! Feel free to **open an issue** or submit a **pull request**.
