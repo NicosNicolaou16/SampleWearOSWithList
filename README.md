@@ -53,8 +53,8 @@ functionality. ([Drift Database Documentation](https://pub.dev/packages/drift)) 
 
 ## Versioning
 
-Flutter SDK version: 3.38.3 <br />
-Dart Version: 3.10.1 <br />
+Flutter SDK version: 3.41.6 <br />
+Dart Version: 3.11.4 <br />
 
 # Feeds/Urls/End Point (parsing some data from response)
 
