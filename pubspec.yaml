@@ -42,7 +42,7 @@ dependencies:
   sqlite3_flutter_libs: ^0.5.40
   path_provider: ^2.1.5
   path: ^1.8.3
-  equatable: ^2.0.7
+  equatable: ^2.0.8
   cached_network_image: ^3.4.1
   wear_plus: ^1.2.4
 
