@@ -66,6 +66,30 @@ To ensure the app is recognized as a wearable app, add the following to your `An
 > [!IMPORTANT]
 > Similar project with (Kotlin Language) :point_right: [SampleWearOSComposeWithList](https://github.com/NicosNicolaou16/SampleWearOSComposeWithList) :point_left: <br />
 
+## 🔧 Versioning
+
+- **Flutter SDK:** **3.41.6**
+- **Dart Version:** **3.11.4**
+
+## 📡 Data Source (SpaceX API)
+This project parses data from the following endpoints:
+- **GitHub:** [SpaceX-API](https://github.com/r-spacex/SpaceX-API)
+- **Documentation:** [Postman SpaceX Docs](https://docs.spacexdata.com/?version=latest)
+
+## 📚 References & Tutorials
+- **Building Wear OS Apps:** [Flutter Community Medium](https://medium.com/flutter-community/flutter-building-wearos-app-fedf0f06d1b4)
+- **Wear Plugin:** [pub.dev/packages/wear](https://pub.dev/packages/wear)
+- **Flutter Wear Plugin GitHub:** [fluttercommunity/flutter_wear_plugin](https://github.com/fluttercommunity/flutter_wear_plugin)
+- **Wear OS Compose Guide:** [Official Android Documentation](https://developer.android.com/training/wearables/compose)
+
+## ⭐ Stargazers
+If you find this project useful, please give it a star!  
+[Check out the stargazers here](https://github.com/NicosNicolaou16/samplewearoswithlist/stargazers)
+
+## 🙏 Support & Contributions
+Feedback, bug reports, and feature requests are welcome! Feel free to **open an issue** or submit a **pull request**.
+
+
 ## Versioning
 
 Flutter SDK version: 3.41.6 <br />
