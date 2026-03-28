@@ -88,23 +88,3 @@ If you find this project useful, please give it a star!
 
 ## 🙏 Support & Contributions
 Feedback, bug reports, and feature requests are welcome! Feel free to **open an issue** or submit a **pull request**.
-
-
-## Versioning
-
-Flutter SDK version: 3.41.6 <br />
-Dart Version: 3.11.4 <br />
-
-# Feeds/Urls/End Point (parsing some data from response)
-
-## (Links References for Ends Points)
-
-https://github.com/r-spacex/SpaceX-API (GitHub) <br />
-https://docs.spacexdata.com/?version=latest (Postman) <br />
-
-# References/Tutorials Follow
-
-https://medium.com/flutter-community/flutter-building-wearos-app-fedf0f06d1b4 <br />
-https://pub.dev/packages/wear <br />
-https://github.com/fluttercommunity/flutter_wear_plugin <br />
-https://developer.android.com/training/wearables/compose <br />
