@@ -60,12 +60,6 @@ To ensure the app is recognized as a wearable app, add the following to your `An
 </manifest>
 ```
 
-> [!IMPORTANT]  
-> Check my article for the setup :point_right: [Standalone Wear OS Application (Setup for Jetpack Compose and Flutter) - Medium](https://medium.com/@nicosnicolaou/standalone-wear-os-application-jetpack-compose-and-flutter-5a37f4775ed8) :point_left: <br />
-
-> [!IMPORTANT]
-> Similar project with (Kotlin Language) :point_right: [SampleWearOSComposeWithList](https://github.com/NicosNicolaou16/SampleWearOSComposeWithList) :point_left: <br />
-
 ## 🔧 Versioning
 
 - **Flutter SDK:** **3.41.6**
